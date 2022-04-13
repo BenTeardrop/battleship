@@ -24,10 +24,23 @@ def generate_random_coords():
     """
     row = int(random.randint(1, 5))
     column = int(random.randint(1, 5))
-    print(f'random row:{row} and column: {column}')
+    # print(f'random row:{row} and column: {column}')
     return (row, column)
 
 
-generate_random_coords()
+def generate_ship_coords():
+    """
+    Generates random ship coordinates list
+    """
+    coords_list = []
+    for x in range(0, 5):
+        ship_coords = generate_random_coords()
+        coords_list.append(ship_coords)
+    print(f'Coord list: {coords_list}')
+    return coords_list
+    
+
+generate_ship_coords()
+# generate_random_coords()
 print_board(board)
 print_board(computer_board)
